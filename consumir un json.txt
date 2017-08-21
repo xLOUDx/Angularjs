@@ -1,0 +1,13 @@
+app.controller('hola', function($scope, $http){
+
+  $http({
+    method: 'GET',
+    url: '/datos/bboying.json'
+    }).then(function successCallback(response) {
+
+      $scope.bboys = response.data;
+      console.log(response.data);
+
+    }, function errorCallback(response) {
+      console.log('Error en la respuesta')
+    });
